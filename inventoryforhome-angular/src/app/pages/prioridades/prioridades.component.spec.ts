@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppSidenavComponent } from './app-sidenav.component';
+import { PrioridadesComponent } from './prioridades.component';
 
-describe('AppSidenavComponent', () => {
-  let component: AppSidenavComponent;
-  let fixture: ComponentFixture<AppSidenavComponent>;
+describe('PrioridadesComponent', () => {
+  let component: PrioridadesComponent;
+  let fixture: ComponentFixture<PrioridadesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppSidenavComponent]
+      imports: [PrioridadesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppSidenavComponent);
+    fixture = TestBed.createComponent(PrioridadesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
