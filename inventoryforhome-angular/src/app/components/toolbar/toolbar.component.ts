@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'toolbar',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule],
+  standalone: true,
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
