@@ -2,10 +2,15 @@
   <!-- Sidebar -->
   <mat-sidenav #sidenav mode="side" opened="false">
     <mat-nav-list>
-      <a mat-list-item href="#">Inicio</a>
-      <a mat-list-item href="#">Inventario</a>
-      <a mat-list-item href="#">Empaques</a>
-      <a mat-list-item href="#">Reglas de prioridad</a>
+       <!-- Los enlaces ahora utilizan routerLink -->
+      <!-- <a mat-list-item [routerLink]="['/']">Inicio</a> -->
+      <!-- <a mat-list-item [routerLink]="['/inventario']">Inventario</a>
+      <a mat-list-item [routerLink]="['/empaques']">Empaques</a>
+      <a mat-list-item [routerLink]="['/prioridades']">Reglas de prioridad</a> -->
+      <a mat-list-item routerLink="/" routerLinkActive="active" (click)="sidenav.close()">Inicio</a>
+      <a mat-list-item routerLink="/inventario" routerLinkActive="active" (click)="sidenav.close()">Inventario</a>
+      <a mat-list-item routerLink="/empaques" routerLinkActive="active" (click)="sidenav.close()">Empaques</a>
+      <a mat-list-item routerLink="/prioridades" routerLinkActive="active" (click)="sidenav.close()">Prioridades</a>
     </mat-nav-list>
   </mat-sidenav>
 
