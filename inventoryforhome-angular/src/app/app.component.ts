@@ -12,4 +12,5 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 })
 export class AppComponent {
   title = 'inventoryforhome-angular';
+  
 }
