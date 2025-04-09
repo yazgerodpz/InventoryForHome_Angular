@@ -1,20 +1,20 @@
-<mat-sidenav-container class="sidenav-container">
+<!-- <mat-sidenav-container class="sidenav-container"> -->
   <!-- Sidebar -->
-  <mat-sidenav #sidenav mode="side" opened="false">
-    <mat-nav-list>
+  <!-- <mat-sidenav #sidenav mode="side" opened="false">
+    <mat-nav-list> -->
       <!-- <a mat-list-item routerLink="/" routerLinkActive="active" (click)="sidenav.close()">Inicio</a> -->
-      <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">Home</a>
+      <!-- <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">Home</a>
       <a mat-list-item routerLink="/inventario" routerLinkActive="active" (click)="sidenav.close()">Inventario</a>
       <a mat-list-item routerLink="/empaques" routerLinkActive="active" (click)="sidenav.close()">Empaques</a>
       <a mat-list-item routerLink="/prioridades" routerLinkActive="active" (click)="sidenav.close()">Prioridades</a>
     </mat-nav-list>
-  </mat-sidenav>
+  </mat-sidenav> -->
 
   <!-- Contenido principal -->
-  <mat-sidenav-content>
-    <mat-toolbar>
+  <!-- <mat-sidenav-content>
+    <mat-toolbar> -->
       <!-- Botón para abrir la sidenav -->
-      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Toggle sidenav">
+      <!-- <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Toggle sidenav">
         <mat-icon>menu</mat-icon>
       </button>
 
@@ -29,4 +29,39 @@
       </button>
     </mat-toolbar>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<mat-toolbar>
+  <!-- Botón que abre el menú -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Abrir menú">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Inventory for home</span>
+  <span class="example-spacer"></span>
+  <!-- <button mat-icon-button aria-label="Favorito">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Compartir">
+    <mat-icon>share</mat-icon>
+  </button> -->
+</mat-toolbar>
+
+<!-- Menú -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/home" routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+  <button mat-menu-item routerLink="/inventario" routerLinkActive="active">
+    <mat-icon>storage</mat-icon>
+    <span>Inventario</span>
+  </button>
+  <button mat-menu-item routerLink="/empaques" routerLinkActive="active">
+    <mat-icon>add_box</mat-icon>
+    <span>Empaques</span>
+  </button>
+  <button mat-menu-item routerLink="/prioridades" routerLinkActive="active">
+    <mat-icon>low_priority</mat-icon> 
+    <span>Reglas de prioridad</span>
+  </button>
+</mat-menu>
