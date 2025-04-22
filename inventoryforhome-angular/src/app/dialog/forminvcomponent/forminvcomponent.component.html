@@ -1,9 +1,57 @@
 <p>forminvcomponent works!</p>
 <form class="example-form">
+    <!-- campo para introducir el nombre -->
     <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
+      <mat-label>Nombre del artículo</mat-label>
+      <input matInput placeholder="Ingresa el nombre del artículo" required>
     </mat-form-field>
+
+    <!-- campo numerico para la cantidad -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" placeholder="Ingresa una cantidad" min="1" required>
+    </mat-form-field>
+
+    <!-- campo select para las opciones de regla de prioridad -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Regla de Prioridad</mat-label>
+      <mat-select [(ngModel)]="selectedPriority" name="reglaPrioridad" required>
+        <mat-option *ngFor="let rule of priorityRules" [value]="rule.value">
+          {{ rule.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- campo select para las opciones de tipo de empaque -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Tipo de empaque</mat-label>
+      <mat-select [(ngModel)]="selectedPriority" name="tipoempaque" required>
+        <mat-option *ngFor="let rule of typestock" [value]="rule.value">
+          {{ rule.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- campo para fecha de compra -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fecha de compra</mat-label>
+      <input matInput [matDatepicker]="pickerCompra" [(ngModel)]="purchaseDate" name="fechaCompra" required>
+      <mat-datepicker-toggle matSuffix [for]="pickerCompra"></mat-datepicker-toggle>
+      <mat-datepicker #pickerCompra></mat-datepicker>
+    </mat-form-field>
+
+    <!-- campo para fecha de expiracion -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fecha de expiración</mat-label>
+      <input matInput [matDatepicker]="pickerExpira" [(ngModel)]="expirationDate" name="fechaExpiracion" required>
+      <mat-datepicker-toggle matSuffix [for]="pickerExpira"></mat-datepicker-toggle>
+      <mat-datepicker #pickerExpira></mat-datepicker>
+    </mat-form-field>
+
+    <div class="botones-formulario-guadar-cancelar">
+      <button mat-raised-button color="primary" type="submit" >Guardar</button>
+      <button mat-raised-button color="accent" type="button" (click)="cerrarDialogo()">Cancelar</button>
+    </div>
   
     <mat-form-field class="example-full-width">
       <mat-label>Leave a comment</mat-label>
