@@ -9,13 +9,22 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MAT_DATE_LOCALE, DateAdapter, MAT_DATE_FORMATS, NativeDateAdapter } from '@angular/material/core';
+
 
 
 @Component({
   selector: 'app-forminvcomponent',
   standalone: true,
   imports: [ MatDialogModule, CommonModule, MatButtonModule, MatInputModule,
-    MatFormFieldModule, FormsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule],
+    MatFormFieldModule, FormsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,
+    MatIconModule],
+
+    providers: [
+      { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }, // o en-US si prefieres inglés
+    ],
+    
   templateUrl: './forminvcomponent.component.html',
   styleUrl: './forminvcomponent.component.css'
 })

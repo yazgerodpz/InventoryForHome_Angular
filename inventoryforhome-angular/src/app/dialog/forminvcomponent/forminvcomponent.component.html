@@ -33,9 +33,9 @@
     </mat-form-field>
 
     <!-- campo para fecha de compra -->
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field appearance="fill" class="example-full-width">
       <mat-label>Fecha de compra</mat-label>
-      <input matInput [matDatepicker]="pickerCompra" [(ngModel)]="purchaseDate" name="fechaCompra" required>
+      <input matInput [matDatepicker]="pickerCompra" [(ngModel)]="purchaseDate" name="purchaseDate" required>
       <mat-datepicker-toggle matSuffix [for]="pickerCompra"></mat-datepicker-toggle>
       <mat-datepicker #pickerCompra></mat-datepicker>
     </mat-form-field>
@@ -44,7 +44,7 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Fecha de expiración</mat-label>
       <input matInput [matDatepicker]="pickerExpira" [(ngModel)]="expirationDate" name="fechaExpiracion" required>
-      <mat-datepicker-toggle matSuffix [for]="pickerExpira"></mat-datepicker-toggle>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerExpira"></mat-datepicker-toggle>
       <mat-datepicker #pickerExpira></mat-datepicker>
     </mat-form-field>
 
